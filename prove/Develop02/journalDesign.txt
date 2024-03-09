@@ -1,0 +1,48 @@
+what does program do?
+-create a journal entry with a random prompt given and save it to a .txt or .CSV  and then display it.
+
+What user inputs does it have?
+-the option chossen from the menu
+-typing the response to a given prompt
+-saving to a given file
+-loading from a given file
+
+What output does it produce?
+-the random prompt to write about
+-when displaying shows date, prompt and your response
+-menu of the options to choose from
+
+
+How does the program end?
+-you choosing from the given options the quit option
+
+---------------------------------------------------------
+Determine the classes:
+- journal - stores the list of entries
+- Entry/ write - shows the single entry      (- write and display- the class could create the prompts to answer and save your response and then when asked display the response you have given)
+- prompt generator- creates the random prompts
+- program - displays menu and cals the classes and functions as needed.
+
+-(automatic saving) - check date time, find filename, and save entries to file. -> (double enter creates autosave) 
+-(journal ext) - asking for load file to start or start a new file
+
+-------------------------------------------------------
+Define Class behaviors:
+-Journal: create a list to hold all the entries, The list will need to hold date, prompt, and answer, push the entry list to a txt file.
+-Entry: will call prompt generator and display it, recieve response and collect date, push this information to journal.
+    -idea: it asks do you want to choose your own or be  given a prompt. (if/then statement)
+
+
+-Prompt generator: get the random prompt from a chosen few.
+---------------------------------------------------------
+Define Class atributes:
+-Journal: 
+    _entries- list<entry>
+-Entry:
+    _date: string
+    _proptText: string
+    _entryText: string
+-Generator:
+    _prompts: string 
+-Program:
+    _userChoice: int
