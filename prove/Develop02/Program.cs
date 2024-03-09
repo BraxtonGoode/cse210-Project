@@ -83,12 +83,11 @@ class Program
         } while (userChoice != 5);
 
 
-
-
-
-
-
-
-
     }
 }
+
+// For the exceeding requirements section i added 3 pieces. first piece starts when you open the program and it immediately asks if you want to load a saved file or not. 
+// if you say yes it allows you to immediately load a file if you say no you just continue on to the menu options. 
+// Second piece is using Console.clear to clean up transitions and the terminal between selecting new options.
+// Third and final is that the SavetoFile function takes in the parameter of loaded which checks if you loaded from a file or not initially.
+// Depending on that if you did not and wanted to save to an existing one you would be told if you it may overwrite existing information and then you get the option to back out or continue.
