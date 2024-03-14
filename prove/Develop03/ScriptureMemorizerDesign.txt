@@ -1,0 +1,55 @@
+What does the program do?
+-shows a scripture reference and the the scripture itself, Then asks to hide some words or quit, if you click enter it then hides a few words.
+-----------------------------------------
+What user inputs does it have?
+- (added) The scripture reference
+- (added) The scriptures according to the reference
+- hitting enter or typing quit
+------------------------------------------
+What output does it produce?
+- The reference
+- the scripture
+------------------------------------
+How does the program end?
+- you type Quit or the reference runs out of letters
+------------------------------
+Determine Classes:
+What are good candidates for classes in this program?
+What are the primary responsibilities of each class?
+- reference - stores the reference you have inputed
+- scripture - stores the scripture you have inputed and the reference
+- Hidden words - Holds the methods that hides the words of the given reference
+--------------------------------------------
+Define Class Behaviors:
+What are the behaviors this class will have in order to fulfill its responsibilities? (In other words, what things should this class do?)
+Scripture
+    HideRandomWords(numberToHide : int) : void
+    GetDisplayText() : string
+    IsCompletelyHidden() : bool
+Word
+    Hide() : void
+    Show() : void
+    IsHidden() : bool
+    GetDisplayText() : string
+Reference
+    GetDisplayText() : string
+    Possible getters and setters
+--------------------------------------------
+Define Class attributes:
+What attributes does this class need to fulfill its behaviors? (In other words, what variables should this class store?)
+What are the data types of these member variables?
+Scripture
+    _reference : Reference
+    _words : List<Word>
+Word
+    _text : string
+    _isHidden : bool
+Reference
+    _book : string
+    _chapter : int
+    _verse : int
+    _endVerse : int
+----------------------------------------------
+
+John 11:35
+Jesus Wept
