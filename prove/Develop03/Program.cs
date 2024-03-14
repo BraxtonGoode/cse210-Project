@@ -62,3 +62,7 @@ class Program
         } while (userInput != "quit");
     }
 }
+
+//my added pieces of code involve some error handling namely consol.clear() it seemed to have a problem using the debugger on the top right of screen.
+//I also added the component where if you dont type Quit and hit enter you recieve a message saying to try again and then after 5 seconds it clears the screen.
+
