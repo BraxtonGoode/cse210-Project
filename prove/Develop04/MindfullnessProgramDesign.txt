@@ -1,0 +1,85 @@
+What does the program do?
+    -an application that holds three activities that can help with mindfulness, The activities include Breathing excersises, reflection activity, and listing activities.
+-------------------------------------
+What user inputs does it have?
+    -options menu
+    - duration in which the activity will go on for. 
+    -(listing activity) - typing items they think about
+----------------------------------------
+What output does it produce?
+    - menu options
+    - Name of activity
+    - description of activity
+    - (breathing)prompts for breathing in and out.
+    - (reflection) prompt for a general moment and then follow up questions
+    - (listing) prompt for a general moment and total of user input.
+    - end the program with well done
+--------------------------------------------
+How does the program end?
+    - choose the quit menu options
+    - and each activity says well done
+----------------------------------------
+Determine Classes:
+
+What are good candidates for classes in this program?
+    - activities
+    - breathing activity
+    - Reflection activity
+    - listing activity
+    - program 
+What are the primary responsibilities of each class?
+    - (Base) activities( this will hold the welcome message, description variable, how long activity will last, end prompt with welldone)
+    - breathing activity(holds description, breathe in and out)
+    - Reflection activity(prompt telling what too think about, hit enter to move on, and asks a question every few seconds until duration ends)
+    - listing activity(list items based on a prompt, count the amount of items you have typed)
+    - program(menu compiler and caller of other classes based on chosen items)
+---------------------------------------
+Example:
+Activity
+    DisplayStartingMessage() : void
+    DisplayEndingMessage() : void
+    ShowSpinner(seconds : int) : void
+    ShowCountDown(second : int) : void
+BreathingActivity
+    Run() : void
+ListingActivity
+    Run() : void
+    GetRandomPrompt() : string
+    GetListFromUser() : List<string>
+ReflectingActivity
+    Run() : void
+    GetRandomPrompt() : string
+    GetRandomQuestion() : string
+    DisplayPrompt() : void
+    DisplayQuestions() : void
+------------------------------------------
+Determine Class Attributes:
+What attributes does this class need to fulfill its behaviors? (In other words, what variables should this class store?)
+What are the data types of these member variables?
+
+Activity
+    _name : string
+    _description : string
+    _duration : int
+BreathingActivity
+    None needed
+ListingActivity
+    _count : int
+    _prompts : List<string>
+ReflectingActivity
+    _prompts : List<string>
+    _questions : List<string>
+-----------------------------------------------
+Define Constructors:
+What constructors should each class have?
+Activity
+    - pass in (string name, string description, int duration)
+
+BreathingActivity
+    - gives the (string name, string description) passes in duration
+
+ReflectingActivity
+    - gives the (string name, string description) passes in duration
+
+ListingActivity
+    - Gives the  (string name, string description) passes in duration
