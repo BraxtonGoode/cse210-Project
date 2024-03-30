@@ -1,0 +1,3 @@
+300
+SimpleGoal:talk to friends:talk:100:True
+EternalGoal: scriptures: read scriptures: 100

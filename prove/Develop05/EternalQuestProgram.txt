@@ -1,0 +1,153 @@
+What does the program do?
+-to create goals and gamify the rewards and points upon completion of the goals.
+-----------------------------------
+What user inputs does it have?
+- Menu option choice
+    -new goal:
+        -simple:
+            -name
+            -description
+            - points
+        -eternal:
+            -name 
+            -description
+            -points
+        -checklist:
+            -name 
+            -description
+            -how many times
+            -points per times
+            - bonus points at completion
+
+    -save goal:
+        -filename
+    -load goals:
+        -filename
+    -Record Events:
+        -select goal you have worked option
+    -quit
+-----------------------------------
+What output does it produce?
+- Menu option choice
+    -new goal
+        -follow up on name, description and points.
+    -list goals
+        -list all your goals you have created and wether you have completed it or not.
+    -save and load
+        -require asking for filename
+    -events
+        -ask what event you have worked on.
+-----------------------------------
+How does the program end?
+-type out quit at menu choices.
+-----------------------------------
+Determine Classes:
+What are good candidates for classes in this program?
+-program
+-goal
+    -simple
+    -checklist
+    -eternal
+-goal manager(save and load)
+
+What are the primary responsibilities of each class?
+-program
+    -menu and calls other classes
+-goal
+    -name
+    -description
+    -points
+-simple
+    constructor(name,description,points)
+-checklist
+    -constructor(name, description,how many times, points per time, bonus points upon completion)
+-eternal
+    -constructor(name,description, points per time)
+-goal manager(save and load)
+    -???????
+
+-----------------------------------------------
+Define class behaviors:
+
+Goal
+    RecordEvent() : void (Abstract)
+    IsComplete() : bool (Abstract)
+    GetDetailsString() : string
+    GetStringRepresentation() : string (Abstract)
+SimpleGoal
+    RecordEvent() : void (Override)
+    IsComplete() : bool (Override)
+    GetStringRepresentation() : string (Override)
+EternalGoal
+    RecordEvent() : void (Override)
+    IsComplete() : bool (Override)
+    GetStringRepresentation() : string (Override)
+ChecklistGoal
+    RecordEvent() : void (Override)
+    IsComplete() : bool (Override)
+    GetDetailsString() : string (Override)
+    GetStringRepresentation() : string (Override)
+
+Goals manager:
+Start - This is the "main" function for this class. It is called by Program.cs, and then runs the menu loop.
+DisplayPlayerInfo - Displays the players current score.
+ListGoalNames - Lists the names of each of the goals.
+ListGoalDetails - Lists the details of each goal (including the checkbox of whether it is complete).
+CreateGoal - Asks the user for the information about a new goal. Then, creates the goal and adds it to the list.
+RecordEvent - Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal.
+SaveGoals - Saves the list of goals to a file.
+LoadGoals - Loads the list of goals from a file.
+
+
+------------------------------------------------------------------
+Define class Attributes:
+What attributes does this class need to fulfill its behaviors? (In other words, what variables should this class store?)
+-program
+    -create instances
+-goal
+    -name
+    -description
+    -points
+-simple
+    -same as goal base
+    - same as goal
+-checklist
+    -same as goal base
+    -points per time
+    -bonus points
+-eternal
+    -same as goal base
+    -points per time
+-goal manager(save and load)
+    -???????
+
+What are the data types of these member variables?
+
+Goal
+    _shortName : string
+    _description : string
+    _points : int
+SimpleGoal
+    _isComplete : bool
+EternalGoal
+    None needed
+ChecklistGoal
+    _amountCompleted : int
+    _target : int
+    _bonus : int
+
+GoalManager
+    _goals : List<Goal>
+    _score : int
+------------------------------------------------------
+Define Constructors:
+What constructors should each class have? (Parameters)
+
+
+What other work needs to be done to set up these objects?
+
+Goal(name : string, description : string, points : int)
+SimpleGoal(name : string, description : string, points : int) - This should also set the the variables for if it is complete to be false.
+EternalGoal(name : string, description : string, points : int)
+CheckListGoal(name : string, description : string, points : int, target : int, bonus : int) - In addition to the standard attributes, a checklist goal also needs the target and the bonus amounts. Then, it should set the amount completed to begin at 0.
+GoalManager() - Initializes and empty list of goals and sets the player's score to be 0.
