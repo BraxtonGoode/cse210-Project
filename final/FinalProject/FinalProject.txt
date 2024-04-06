@@ -1,0 +1,193 @@
+What does the program do?
+
+-Create an entertainment database that allows you to gather information such as Type(book,CD, DVD), 
+    and if you would like to save information in a CSV file or a text file and filter the information in them by the way you would like.
+    
+    -look at attaching to an already created database (for title....)
+
+
+
+-----------------------------------
+What user inputs does it have?
+-menu options:
+    1.Create new entry
+        -book
+            -title
+            -genre
+            -author
+            -illustrator
+            -rating
+        -Movie
+            -title
+            -genre
+            -rating
+        -CD
+            -title
+            -genre
+            -singer
+            -rating
+    2.list Entries
+    3.Save file
+        -CSV
+            -filename
+        -txt 
+            -filename
+    4.Load file
+        -CSV
+            -filename
+        -txt 
+            -filename
+    5.Filter information
+        -what you will filter by
+    6.Quit
+
+
+-----------------------------------
+What output does it produce?
+-menu options:
+    1.Create new entry
+        -questions for type of entry
+ 
+    2.list Entries
+        -list type of Entries
+            -information on the entry
+    3.Save file
+        -CSV
+            -filename
+        -txt 
+            -filename
+    4.Load file
+        -CSV
+            -filename
+        -txt 
+            -filename
+    5.Filter information
+        -what you will filter by
+        -sample 
+        - are you sure
+    6.Quit
+
+
+-----------------------------------
+How does the program end?
+    - type 6 or quit within menu
+-----------------------------------
+Determine Classes:
+What are good candidates for classes in this program?
+    -program.cs
+    -EntertaimentMedia
+        -Books
+        -CDs 
+        -DVD
+    -Save and Load
+    -EntertainmentManager
+    -Filter
+
+
+What are the primary responsibilities of each class?
+    -program.cs - Call and initiate program with Start() method from EntertainmentManager.
+    -EntertaimentMedia - Parent Class creates basic variables and methods
+        -Books - book related variables and methods
+        -CDs - CD related variables and methods
+        -DVD - DVD related variables and methods
+    -Save and Load - ask for filename, and save or load into a csv or txt file 
+    -EntertainmentManager - Initializes all classes and calls them based upon the menu system created here.
+    -Filter - Filter the information given by a way you wud like EX(A-Z, title)
+
+
+
+
+-----------------------------------------------
+Define class behaviors:
+What are the behaviors this class will have in order to fulfill its responsibilities? (In other words, what things should this class do?)
+    -program.cs
+        -call EntertaimentMedia.Start()
+    -EntertaimentMedia
+        -GetDetailString() string -(abstract)
+        -GetStringRepresentation() string -(abstract)
+    -Books
+        -GetDetailString() string -(overide)
+        -GetStringRepresentation() string -(overide)
+    -CDs 
+        -GetDetailString() string -(overide)
+        -GetStringRepresentation() string -(overide)
+    -DVD
+
+        -GetDetailString() string -(overide)
+        -GetStringRepresentation() string -(overide)
+    -Save and Load
+        -Savetxt()
+        -Loadtxt()
+        -SaveCSV()
+        -LoadCSV()
+    -EntertainmentManager
+        -Start()
+        -CreateEntry()
+        -ListMedia()
+        -ListEntries()
+    -Filter    ?   (Will need to research)
+        -GetList()
+        -CreateFilter()
+
+
+
+---------------------
+Define class Attributes:
+What attributes does this class need to fulfill its behaviors? (In other words, what variables should this class store?)
+    -program.cs
+        -none
+    -EntertaimentMedia
+        -title
+        -genre
+        -rating
+    -Books
+        -bookList
+        -author
+        -illustrated
+    -CDs 
+        -CDList
+        -Singer
+    -DVD
+        -DVDList
+        -Directed By
+    -Save and Load
+        -filename
+    -EntertainmentManager
+        -EntertaimentMediaList
+    -Filter
+        -Filtertype
+
+What are the data types of these member variables?
+
+    -program.cs
+        -none
+    -EntertaimentMedia
+        -title
+        -genre
+        -created date
+    -Books
+        -bookList
+        -author
+        -illustrated
+    -CDs 
+        -CDList
+        -Singer
+    -DVD
+        -DVDList
+        -Directed By
+    -Save and Load
+        -filename
+    -EntertainmentManager
+        -EntertaimentMediaList
+    -Filter
+        -Filtertype
+
+------------------------------------------------------
+Define Constructors:
+What constructors should each class have? (Parameters)
+
+
+
+
+What other work needs to be done to set up these objects?
+
