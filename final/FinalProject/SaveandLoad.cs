@@ -56,7 +56,7 @@ public class SaveandLoad
                     string line = reader.ReadLine();
                     string[] parts = line.Split(',');
 
-                    // Assuming the format is "type, title, genre, rating, author, illustrator"
+                    
                     string type = parts[0];
                     string title = parts[1];
                     string genre = parts[2];
@@ -75,6 +75,7 @@ public class SaveandLoad
 
 
                     // Add similar conditions for other types of entertainment media if needed
+                    // DVD
                 }
             }
 
