@@ -72,16 +72,18 @@ public class SaveandLoad
                     {
                         _eMediaList.Add(new CD(title, genre, rating, creator));
                     }
+                    else if (type == "DVDs")
+                    {
+                        _eMediaList.Add(new DVD(title, genre, rating, creator));
 
-
-                    // Add similar conditions for other types of entertainment media if needed
-                    // DVD
+                    }
+            
                 }
             }
 
             Console.WriteLine("Entries loaded from CSV successfully.");
         }
-        catch (Exception ex)
+        catch (Exception ex) //Had some errors when building needed to something that shared problem message clearly.
         {
             Console.WriteLine($"Error occurred while loading entries: {ex.Message}");
         }

@@ -22,7 +22,7 @@ public class DVD : EntertainmentMedia
 
     public override string GetDetailsString()
     {
-        string details = $"Title: {_title},Genre: {_genre},Rating: {_rating} of 5,Singer: {_DirectedBy}";
+        string details = $"Title: {_title},Genre: {_genre},Rating: {_rating} of 5,DirectedBy: {_DirectedBy}";
 
         return details;
     }

@@ -27,7 +27,7 @@ public class EntertainmentManager
         do
         {
             
-          
+            
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("    1. Create New Media Entry");
@@ -46,11 +46,13 @@ public class EntertainmentManager
                 // based upon user choice these methods are then called.
                 if (UserChoice == 1)
                 {
+                   
                     CreateEntry(); 
 
                 }
                 else if (UserChoice == 2)
                 {
+                    
                     ListEntries();         
 
                 }
@@ -68,7 +70,8 @@ public class EntertainmentManager
                 }
                 else if (UserChoice == 5)
                 {
-                    Filter();  
+                    Filter filter = new Filter(_eMediaList);
+                    filter.GetFilter();  
 
                 }
                 else if (UserChoice == 6)
@@ -155,7 +158,7 @@ public class EntertainmentManager
                 
                 do
                 {
-                    Console.Write("What is the rating on this book? (out of 5) ");
+                    Console.Write("What is the rating on this DVD? (out of 5) ");
                     string ratingInput = Console.ReadLine();
 
                     if (int.TryParse(ratingInput, out rating))
@@ -264,61 +267,61 @@ public class EntertainmentManager
         }
 
     }
-
-
-    public void Filter()
-    {
-    int userChoice;
-
-    Console.Write("What would you like to filter by? (Media, Title, or Rating): ");
-    string filterType = Console.ReadLine();
-
-    if (int.TryParse(filterType, out userChoice))
-    {
-        Filter filter = new Filter(_eMediaList);
-        if (userChoice == 1) // Media
-        {
-            Console.WriteLine("Media Types:");
-            ListMedia();
-            Console.Write("What media would you like to filter by? (EX: Books) ");
-            string desiredFilter = Console.ReadLine();
-            FilteredList = filter.FilterByPropertyValue(0, desiredFilter);
-        }
-        else if (userChoice == 2) // Title
-        {
-            Console.Write("Enter the desired title to filter by: ");
-            string desiredTitle = Console.ReadLine();
-            FilteredList = filter.FilterByPropertyValue(1, desiredTitle);
-        }
-        else if (userChoice == 3) // Rating
-        {
-            int desiredRating;
-            Console.Write("Enter the desired Rating to filter by: ");
-            string desiredRatingInput = Console.ReadLine();
-            if (int.TryParse(desiredRatingInput, out desiredRating))
-            {
-                FilteredList = filter.FilterByPropertyValue(3, desiredRating.ToString());
-            }
-            else
-            {
-                Console.WriteLine("Invalid input for rating. Please enter a valid integer.");
-                return;
-            }
-        }
-        if (FilteredList != null)
-        {
-            // Output filtered list
-            Console.WriteLine();
-            Console.WriteLine("Filtered list:");
-            foreach (var media in FilteredList)
-            {
-                Console.WriteLine(media.GetStringRepresentation());
-            }
-        }        
-        else
-        {
-            Console.WriteLine("Could not Find anything that fit your filter. Try again!");
-        }
-    }
 }
-}
+
+    // public void Filter()
+    // {
+    // int userChoice;
+
+    // Console.WriteLine("    1.Media");
+    // Console.WriteLine("    2.Title");
+    // Console.WriteLine("    3.Rating");
+    // Console.Write("What would you like to filter by? (Type: 1, 2 or 3) ");
+    // string filterType = Console.ReadLine();
+
+    // if (int.TryParse(filterType, out userChoice))
+    // {
+    //     Filter filter = new Filter(_eMediaList);
+    //     if (userChoice == 1) // Media
+    //     {
+    //         Console.WriteLine("Media Types:");
+    //         ListMedia();
+    //         Console.Write("What media would you like to filter by? (EX: Books) ");
+    //         string desiredFilter = Console.ReadLine();
+    //         FilteredList = filter.FilterByPropertyValue(0, desiredFilter);
+    //     }
+    //     else if (userChoice == 2) // Title
+    //     {
+    //         Console.Write("Enter the desired title to filter by: ");
+    //         string desiredTitle = Console.ReadLine();
+    //         FilteredList = filter.FilterByPropertyValue(1, desiredTitle);
+    //     }
+    //     else if (userChoice == 3) // Rating
+    //     {
+    //         int desiredRating;
+    //         Console.Write("Enter the desired Rating to filter by: ");
+    //         string desiredRatingInput = Console.ReadLine();
+    //         if (int.TryParse(desiredRatingInput, out desiredRating))
+    //         {
+    //             FilteredList = filter.FilterByPropertyValue(3, desiredRating.ToString());
+    //         }
+    //         else
+    //         {
+    //             Console.WriteLine("Invalid input for rating. Please enter a valid integer.");
+    //             return;
+    //         }
+    //     }
+    //     if (FilteredList != null)
+    //     {
+    //         // Output filtered list
+    //         Console.WriteLine();
+    //         Console.WriteLine("Filtered list:");
+    //         foreach (var media in FilteredList)
+    //         {
+    //             Console.WriteLine(media.GetStringRepresentation());
+    //         }
+    //     }        
+    //     else
+    //     {
+    //         Console.WriteLine("Could not Find anything that fit your filter. Try again!");
+    //     }

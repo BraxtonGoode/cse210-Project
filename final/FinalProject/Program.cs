@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         EntertainmentManager eManager = new EntertainmentManager();
-
+        
         eManager.Start();
     }
 }
